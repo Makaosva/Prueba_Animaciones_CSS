@@ -5,23 +5,134 @@
 body {
   display: grid;
   grid-template-areas:
-    "header"
     "nav"
+    "head"
     "main"
     "foot";
   grid-template-rows: 70px 100px auto 70px;
   min-height: 100vh;
 }
 
-header {
-  grid-area: header;
+header.filter {
+  grid-area: head;
 }
 aside {
   grid-area: nav;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  color: white;
+  background-color: rgb(1, 99, 1);
+}
+aside i {
+  margin-left: 20px;
+}
+aside a {
+  display: none;
+}
+aside p {
+  font-size: 18px;
+  padding-left: 10px;
+}
+aside div {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+aside i.sandwich {
+  margin-right: 10px;
+}
+
+aside i.car {
+  margin-top: 10px;
 }
 main {
   grid-area: main;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 footer {
   grid-area: foot;
+  background-color: rgb(1, 44, 1);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+footer i {
+  padding: 3px;
+}
+footer p {
+  margin: 0;
+  padding: 3px;
+}
+.products {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: grid;
+  margin: 30px;
+}
+.cardPC,
+.cardT {
+  display: none;
+}
+.card-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+.paginacion {
+  display: inline-block;
+  padding-bottom: 10px;
+  margin: 0;
+}
+.paginacion a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  border: 1px solid #ddd; /* Gray */
+  transition: background-color 0.3s;
+}
+.paginacion a:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.paginacion a:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.filter {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(167, 199, 171);
+}
+.filter div {
+  margin: 0 20px 20px 20px;
+}
+.filter p {
+  padding: 10px;
+  font-size: 20px;
+}
+
+.filter select {
+  min-width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.lista {
+  display: none;
+  list-style-type: none;
 }
