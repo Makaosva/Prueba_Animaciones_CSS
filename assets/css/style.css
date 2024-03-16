@@ -23,7 +23,7 @@ aside {
   align-items: center;
   flex-direction: row;
   color: white;
-  background-color: rgb(1, 99, 1);
+  background-color: #70c1b3;
 }
 aside i {
   margin-left: 20px;
@@ -48,6 +48,7 @@ aside i.car {
   margin-top: 10px;
 }
 main {
+  background-color: #f3ffbd;
   grid-area: main;
   display: flex;
   justify-content: center;
@@ -56,7 +57,7 @@ main {
 }
 footer {
   grid-area: foot;
-  background-color: rgb(1, 44, 1);
+  background-color: #247ba0;
   color: white;
   display: flex;
   justify-content: center;
@@ -116,7 +117,7 @@ footer p {
   text-align: center;
   display: flex;
   flex-direction: column;
-  background-color: rgb(167, 199, 171);
+  background-color: #b2dbbf;
 }
 .filter div {
   margin: 0 20px 20px 20px;
@@ -135,4 +136,112 @@ footer p {
 .lista {
   display: none;
   list-style-type: none;
+}
+
+/*Tablets*/
+@media (min-width: 576px) and (max-width: 992px) {
+  body {
+    grid-template-areas:
+      "nav nav"
+      "head main"
+      "foot foot";
+    grid-template-rows: 60px auto 65px;
+  }
+  aside .sandwich {
+    display: none;
+  }
+
+  aside > a {
+    display: flex;
+    justify-items: flex-end;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+  }
+  aside a:hover {
+    color: yellow;
+  }
+  .atributos {
+    padding: 10px;
+  }
+  .products {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 0;
+  }
+  .card {
+    margin: 10px 0 10px 10px;
+  }
+  .cardT {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: grid;
+    margin: 10px 10px 10px 0;
+  }
+  .cardPC {
+    display: none;
+  }
+}
+/*PC*/
+@media (min-width: 992px) {
+  body {
+    grid-template-areas:
+      "nav head"
+      "nav main"
+      "foot main";
+    grid-template-rows: 100px auto 100px;
+    grid-template-columns: 170px auto;
+  }
+  aside .sandwich {
+    display: none;
+  }
+  aside .car {
+    margin: 10px 0 0 0;
+  }
+  aside {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+  }
+
+  aside a {
+    display: inline;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+  }
+  aside a:hover {
+    color: yellow;
+  }
+
+  .atributos {
+    padding: 10px;
+  }
+  .products {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 0;
+  }
+  .card {
+    margin: 0 0 0 10px;
+  }
+  .cardT {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: grid;
+    margin: 5px;
+  }
+  .cardPC {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: grid;
+    margin: 5px;
+  }
+
+  footer p {
+    text-align: center;
+    padding: 10px;
+  }
 }
