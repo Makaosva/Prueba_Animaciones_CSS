@@ -43,7 +43,6 @@ aside div {
 aside i.sandwich {
   margin-right: 10px;
 }
-
 aside i.car {
   margin-top: 10px;
 }
@@ -123,7 +122,7 @@ footer p {
 }
 .paginacion {
   display: inline-block;
-  padding-bottom: 10px;
+  padding: 10px;
   margin: 0;
 }
 .paginacion a {
@@ -170,7 +169,10 @@ footer p {
   display: none;
   list-style-type: none;
 }
-
+.contacto > a {
+  text-decoration: none;
+  color: white;
+}
 /*Tablets*/
 @media (min-width: 576px) and (max-width: 992px) {
   body {
@@ -247,7 +249,7 @@ footer p {
   .products {
     display: grid;
     grid-template-columns: repeat(3, 350px);
-    grid-template-rows: repeat(3, 350px);
+    grid-template-rows: repeat(3, 250px);
     gap: 20px;
     padding: 0;
   }
@@ -261,6 +263,11 @@ footer p {
     display: contents;
   }
 
+  .heart {
+    color: red;
+    display: flex;
+    align-items: start;
+  }
   footer p {
     text-align: center;
     padding: 10px;
