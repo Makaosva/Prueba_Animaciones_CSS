@@ -88,7 +88,8 @@ footer p {
 .card-img {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
+  margin-top: 10px;
 }
 .card-img img {
   max-width: 70%;
@@ -204,7 +205,9 @@ footer p {
     grid-template-rows: 300px;
     gap: 20px;
   }
-
+  .card-img {
+    margin-top: 0;
+  }
   .cardT {
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -262,11 +265,9 @@ footer p {
     border-radius: 8px;
     display: contents;
   }
-
+  
   .heart {
     color: red;
-    display: flex;
-    align-items: start;
   }
   footer p {
     text-align: center;
