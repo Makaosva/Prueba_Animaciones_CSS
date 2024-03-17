@@ -72,25 +72,54 @@ footer p {
   padding: 3px;
 }
 .products {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 350px));
+  gap: 40px;
 }
 .card {
-  border: 1px solid #ccc;
   border-radius: 8px;
-  display: grid;
-  margin: 30px;
+  margin: 10px;
+  display: contents;
 }
 .cardPC,
 .cardT {
   display: none;
+  margin: 10px;
+}
+.card-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .card-img img {
-  width: 100%;
-  height: 100%;
+  max-width: 70%;
+  max-height: 70%;
   border-radius: 8px;
+  filter: grayscale(100%);
+  transition: all 1s ease-out;
+}
+@keyframes imgAnimation {
+  0% {
+    filter: grayscale(80%);
+  }
+  25% {
+    filter: grayscale(65%);
+  }
+  50% {
+    filter: grayscale(50%);
+    max-width: 100%;
+    max-height: 100%;
+    transform: rotate(360deg);
+  }
+  75% {
+    filter: grayscale(25%);
+  }
+  100% {
+    filter: grayscale(0%);
+  }
+}
+.card-img img:hover {
+  animation: imgAnimation 5s;
 }
 .paginacion {
   display: inline-block;
@@ -105,6 +134,10 @@ footer p {
   border: 1px solid #ddd; /* Gray */
   transition: background-color 0.3s;
 }
+.paginacion a:hover {
+  color: #ff1654;
+}
+
 .paginacion a:first-child {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -159,28 +192,21 @@ footer p {
     padding: 10px;
   }
   aside a:hover {
-    color: yellow;
+    color: #ff1654;
   }
   .atributos {
     padding: 10px;
   }
   .products {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 300px 300px;
+    grid-template-rows: 300px;
     gap: 20px;
-    padding: 0;
   }
-  .card {
-    margin: 10px 0 10px 10px;
-  }
+
   .cardT {
     border: 1px solid #ccc;
     border-radius: 8px;
-    display: grid;
-    margin: 10px 10px 10px 0;
-  }
-  .cardPC {
-    display: none;
+    display: contents;
   }
 }
 /*PC*/
@@ -212,7 +238,7 @@ footer p {
     padding: 10px;
   }
   aside a:hover {
-    color: yellow;
+    color: #ff1654;
   }
 
   .atributos {
@@ -220,24 +246,19 @@ footer p {
   }
   .products {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 350px);
+    grid-template-rows: repeat(3, 350px);
     gap: 20px;
     padding: 0;
   }
-  .card {
-    margin: 0 0 0 10px;
-  }
+
   .cardT {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    display: grid;
-    margin: 5px;
+    display: contents;
   }
   .cardPC {
     border: 1px solid #ccc;
     border-radius: 8px;
-    display: grid;
-    margin: 5px;
+    display: contents;
   }
 
   footer p {
